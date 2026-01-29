@@ -1,0 +1,14 @@
+{
+  "name": "color_scheme_generator",
+  "description": "It is an app to create color schemes according to user requirements",
+  "scripts": {
+    "start": "vite",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "vite": "latest"
+  },
+  "devDependencies": {}
+}
