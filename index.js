@@ -2,6 +2,7 @@ const getColorBtn = document.getElementById("get-color-btn");
 const colorPicker = document.getElementById("color-picker");
 const container = document.getElementById("container");
 const theme = document.getElementById("theme");
+const toast = document.getElementById("toast");
 
 // intital state of the app
 getColorScheme("F55A5A", "monochrome");
@@ -25,9 +26,9 @@ function renderColorScheme(colors) {
   container.innerHTML = colors
     .map(
       (color) =>
-        `<div class="box" style = "background-color:${color.hex.value}" data-color = ${color.hex.value}>
+        `<button class="box" style = "background-color:${color.hex.value}" data-color = ${color.hex.value}>
                 <span class="hex-code">${color.hex.value}</span>
-            </div>
+            </button>
         `,
     )
     .join("");
@@ -48,13 +49,15 @@ container.addEventListener("click", async (event) => {
 });
 
 // toast a message
+let toastTimeout;
 
-const toast = document.getElementById("toast");
-
-function showToast(message, duration = 2000) {
+function showToast(message) {
   toast.textContent = message;
   toast.classList.add("show");
-  setTimeout(() => {
+
+  clearTimeout(toastTimeout);
+
+  toastTimeout = setTimeout(() => {
     toast.classList.remove("show");
-  }, duration);
+  }, 2000);
 }
