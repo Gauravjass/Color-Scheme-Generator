@@ -37,6 +37,11 @@ header div {
   height: 42px;
   border: 0.5px solid #313131;
   cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border-radius: 0;
+  padding: 0;
 }
 select {
   flex-grow: 1;
