@@ -10,12 +10,14 @@
     <div class="wrap">
       <header>
         <div>
+          <label for="color-picker" class="sr-only">Choose Base Color</label>
           <input
             type="color"
             id="color-picker"
             class="color-picker"
             value="#F55A5A"
           />
+          <label for="theme" class="sr-only">Choose Color Mode</label>
           <select class="select-color-theme" id="theme" name="theme">
             <option value="monochrome">monochrome</option>
             <option value="monochrome-dark">monochrome-dark</option>
@@ -29,11 +31,11 @@
         </div>
         <button id="get-color-btn" class="btn">Get Color Scheme</button>
       </header>
-      <main id="main">
+      <main id="main" aria-live="polite">
         <div id="container" class="container"></div>
       </main>
     </div>
-    <div id="toast" class="toast"></div>
+    <div id="toast" class="toast" role="alert"></div>
     <script src="index.js"></script>
   </body>
 </html>
